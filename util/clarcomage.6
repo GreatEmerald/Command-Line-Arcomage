@@ -1,0 +1,46 @@
+.TH man 6 "07 December 2014" "1.alpha"
+.SH NAME
+CLArcomage \- Command-line tower-building card game
+.SH SYNOPSIS
+.B clarcomage
+.SH DESCRIPTION
+.B CLArcomage
+is a card game in which two players race to build their tower to the top, demolish the opponent's tower, or accumulate a lot of resources. That is done by playing cards that have different effects.
+
+You can play either against an AI opponent or in a hotseat game. You play the card by entering its ID when prompted, then either entering "1", "Yes", "yes", "y", "True" or "true" to discard it, or anything else to not discard it and play it.
+
+.B CLArcomage
+is the command-line frontend to
+.BR libarcomage ,
+written in the D programming language. See the
+.B FILES
+section for how paths are arranged.
+
+Usually it is preferable to use a graphical client, such as
+.BR darcomage (6),
+but when OpenGL or a graphical server is not available,
+.B CLArcomage
+is a good choice.
+.SH OPTIONS
+No options. The program is interactive.
+.SH FILES
+.I $XDG_DATA_DIRS/arcomage/
+.RS
+The general location of data and base configuration for the backend and frontends. This usually expands to /usr/share/arcomage/.
+.RE
+.I $XDG_DATA_HOME/arcomage/
+.RS
+The location of local overrides for data and base configuration for the backend and frontends. This usually expands to ~/.local/share/arcomage/. Empty by default, copy the (full) contents of the global directory to override.
+.RE
+.I $XDG_DATA_DIRS/arcomage/libarcomage/Configuration.lua
+.RS
+The configuration file with user-editable options. Users should feel free to change these. The file contains comments for each option itself.
+.RE
+.SH BUGS
+Entering an invalid card ID causes the game to crash.
+
+All bugs are tracked on GitHub. If the bug is in the core logic or card decks, report it to libarcomage ( https://github.com/GreatEmerald/libarcomage/issues ), and if it is in the input or output, report it to CLArcomage ( https://github.com/GreatEmerald/Command-Line-Arcomage/issues ).
+.SH AUTHOR
+Dainius "GreatEmerald" Masiliūnas (pastas4 at gmail.com)
+.SH SEE ALSO
+.BR darcomage (6)
