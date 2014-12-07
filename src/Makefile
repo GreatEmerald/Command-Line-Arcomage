@@ -25,6 +25,10 @@ clean:
 	-rm clarcomage
 	-rm clarcomage.o
 
-install:
+install: installdirs
 	cp clarcomage $(DESTDIR)$(bindir)
 	cp ../util/clarcomage.6 $(DESTDIR)$(man6dir)/clarcomage$(man6ext)
+
+installdirs:
+	-mkdir -p $(DESTDIR)$(bindir)
+	-mkdir -p $(DESTDIR)$(man6dir)
