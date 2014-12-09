@@ -32,7 +32,7 @@ Then from the CLArcomage directory again, on Linux:
 cd util
 compile-static.sh
 
-Or on Windows:
+Or on Windows (put OMF lua51.lib and lua5.1.lib in the src folder first):
 
 cd util
 compile.cmd
